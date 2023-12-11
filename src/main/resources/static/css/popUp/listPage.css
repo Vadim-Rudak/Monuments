@@ -1,0 +1,131 @@
+#coopPopUpAddTask{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.b-container{
+    width:200px;
+    height:150px;
+    background-color: #ccc;
+    margin:0px auto;
+    padding:10px;
+    font-size:30px;
+    color: #fff;
+}
+.b-popup{
+    z-index: 4;
+    width:100%;
+    min-height:100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+}
+.b-popup .b-popup-content{
+    width:600px;
+    height: fit-content;
+    background-color: #171717;
+    border-radius:18px;
+    box-shadow: 0px 0px 10px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.popUp-blockTitel{
+    height: 45px;
+    width: 100%;
+    display: flex;
+    color: #fff;
+    padding-left: 30px;
+
+}
+
+.titel_popUp{
+    flex-grow: 9;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_exit{
+    
+    height: 24px;
+    width: 24px;
+    margin-right: 30px;
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.popUp-blockInfo{
+    height: fit-content;
+    width: 90%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_style{
+    margin: 4px;
+    margin-top: 8px;
+    background: #171717;
+    color: #fff;
+    min-height: 44px;
+    font-family: Lato-Regular;
+    width: 94%;
+    border-radius: 8px;
+    border:1px solid #fff;
+}
+
+.input_more_style{
+    padding: 6px;
+    height: 180px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background: #171717;
+    color: #fff;
+    min-height: 44px;
+    font-family: Lato-Regular;
+    width: 93%;
+    border-radius: 8px;
+    border:1px solid #fff;
+}
+
+.popUp-blockBtn{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn_add_material{
+    width: 100px;
+    height: 40px;
+    background-color: #fff;
+    color: #232323;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+
+#coopPopUpMessage{
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_message{
+    color: #fff;
+    font-size: 16px;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Монумент-гранит</title>
+
+    <link rel="apple-touch-icon" href="images/logo_monument.svg" sizes="180x180">
+    <link rel="icon" href="images/logo_monument.svg" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/logo_monument.svg" sizes="16x16" type="image/png">
+    <link rel="mask-icon" href="images/logo_monument.svg">
+    <link rel="icon" href="images/logo_monument.svg">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/adminPageEditMaterial.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.0.2.min.js"></script>
+    <script src="scripts/admin_pages/edit_material.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a href="/EditCatalog" class="nav-link align-middle px-0">
+                            <i class="fs-4 bi-list"></i> <span class="ms-1 d-none d-sm-inline">Каталог</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Tasks" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-person-lines-fill"></i> <span class="ms-1 d-none d-sm-inline">Заказы</span></a>
+                    </li>
+                    <li>
+                        <a href="/EditMaterials" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-hammer"></i> <span class="ms-1 d-none d-sm-inline">Материалы</span></a>
+                    </li>
+                    <li>
+                        <a href="/EditPhotos" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-card-image"></i> <span class="ms-1 d-none d-sm-inline">Фото</span></a>
+                    </li>
+                    <li>
+                        <a href="/dashboard" class="nav-link px-0 align-middle">
+                            <i class="fs-4 bi-graph-up"></i> <span class="ms-1 d-none d-sm-inline">Статистика</span></a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="dropdown pb-4">
+                    <a href="/logout" class="nav-link px-0 align-middle">
+                            <i class="bi bi-box-arrow-left"></i> <span class="ms-1 d-none d-sm-inline">Выход</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="col py-3" style="height:100vh;overflow-y:auto">
+            <div class="nav_bar_top_with_add">
+                <a id="btn_add" class="btn btn-primary" href="javascript:PopUpAddShow()" role="button">Добавить</a>
+            </div>
+
+            
+                <div class="container mx-auto mt-4">
+                <div class="row">
+                    {{#ListMaterials}}
+                        <div class="col-md-4">
+                            <div class="card" style="width: 18rem;">
+                                {{#res}}<img src="data:image/jpg;base64,{{res}}" class="card-img-top" alt="...">{{/res}}
+                                <div class="card-body">
+                                    {{#name}}<h5 id="card_name_material_{{id}}" class="card-title">{{name}}</h5>{{/name}}
+                                    {{#info}}<p id="card_info_material_{{id}}" class="card-text">{{info}}</p>{{/info}}
+                                    <a href="javascript:PopUpEditShow({{id}})" class="btn mr-2"><i class="fas fa-link"></i>Редактировать</a>
+                                    <a href="javascript:PopUpDeleteShow({{id}})" class="btn"><i class="fab fa-github"></i> Удалить</a>
+                                </div>
+                            </div>
+                        </div>
+                    {{/ListMaterials}}
+
+                </div>
+
+
+        </div>
+    </div>
+</div>
+</div>
+<div class="b-popup" id="coopPopUp">
+    <div class="b-popup-content">
+        <div class="popUp-blockTitel">
+            <div class="titel_popUp">Добавление материала</div>
+            <a class="btn_exit" href="javascript:PopUpAddHide()">
+                <img src="images/close_button.svg" />
+            </a>
+        </div>
+        <div class="popUp-blockInfo">
+            <input type="text" class="form-control input_style" id="material_name" placeholder="Название материала" value="" required="">
+            <input type="file" class="form-control input_style" id="material_photo" placeholder="Название материала" value="" required="">
+            <textarea type="text" class="form-control input_more_style" id="material_info" placeholder="Подробная информация о материале" ></textarea>
+        </div>
+        <div class="popUp-blockBtn">
+            <a class="btn_add_material" href="javascript:addMaterial()">Сохранить</a>
+        </div>
+    </div>
+</div>
+
+<div class="b-popup" id="popUpEditMaterial">
+    <div class="b-popup-content">
+        <div class="popUp-blockTitel">
+            <div class="titel_popUp">Редактирование Материала</div>
+            <a class="btn_exit" href="javascript:PopUpEditHide()">
+                <img src="images/close_button.svg" />
+            </a>
+        </div>
+        <div class="popUp-blockInfo">
+            <input id="material_edit_id" type="text" style="display:none" value="">
+            <input type="text" class="form-control input_style" id="edit_material_name" placeholder="Название материала" value="" required="">
+            <input type="file" class="form-control input_style" id="edit_material_photo" placeholder="Название материала" value="" required="">
+            <textarea class="form-control input_more_style" id="edit_material_info" placeholder="Подробная информация о материале"></textarea>
+        </div>
+        <div class="popUp-blockBtn">
+            <a class="btn_add_material" href="javascript:updateMaterial()">Обновить</a>
+        </div>
+    </div>
+</div>
+
+<div class="b-popup" id="popUpDeleteMaterial">
+    <div class="b-popup-content">
+        <div class="popUp-blockTitel">
+            <input id="material_delete_id" type="text" style="display:none" value="">
+            <div class="titel_popUp">Удаление материала</div>
+            <a class="btn_exit" href="javascript:PopUpDeleteHide()">
+                <img src="images/close_button.svg" />
+            </a>
+        </div>
+        <div class="popUp-blockInfoDelete">
+            Вы действительно желаете удалить данный материал?
+        </div>
+        <div class="popUp-blockBtnInDelete">
+            <a class="btn_delete_material" href="javascript:deleteMaterial()">Удалить</a>
+            <a href="javascript:PopUpDeleteHide()" class="btn_cansel_material">Отмена</a>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

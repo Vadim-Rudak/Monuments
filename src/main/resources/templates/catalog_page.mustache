@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head style="padding-top: 0">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Каталог памятников в Глубоком</title>
+    <meta name="description" content="Подбор памятников и декора к ним">
+    <meta name="keywords" content="Каталог, Декор, Подбор">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" href="images/logo_monument.svg" sizes="180x180">
+    <link rel="icon" href="images/logo_monument.svg" sizes="32x32" type="image/png">
+    <link rel="icon" href="images/logo_monument.svg" sizes="16x16" type="image/png">
+    <link rel="mask-icon" href="images/logo_monument.svg">
+    <link rel="icon" href="images/logo_monument.svg">
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+
+
+    <link href="https://getbootstrap.com/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <link type="text/css" href="css/catalog/catalogPage.css" rel="stylesheet" />
+
+    <script src="scripts/mainSmallMenu.js"></script>
+
+
+    <div id="navBar" class="toolbar">
+        <div id="logo_1" class="img_logo_toolbar">
+            <img src="images/logo_monument.svg" height="38px"  />
+            <div id="logo_titel"><div id="titel1">Монумент-гранит</div><div id="titel2">Глубокое</div></div>
+        </div>
+        <div class="toolbar_btn">
+            <a class="btn_toolbar" href="/">главная</a>
+            <a class="btn_toolbar" href="/catalog">каталог</a>
+            <a class="btn_toolbar" href="/Constructor">конструктор</a>
+            <a class="btn_toolbar" href="/#for_as">контакты</a>
+        </div>
+
+        <div class="btn_right">
+            <div id="myMenu" class="mob_menu">
+                <a href="javascript:void(0)" onclick="myFunction()"><img id="img_menu" class="img_menu" src="images/img_mob_menu_false.svg" height="20px" width="26px" /></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="small_menu" class="small_menu" style="display: none">
+        <div class="block_menu">
+            <a href="/" class="item_in_small_menu"><div class="small_menu_item1">
+                <div style="padding-top: 12px;margin-left: 45px"><span>главная</span></div>
+            </div></a>
+            <a href="/catalog" class="item_in_small_menu"><div class="small_menu_item2">
+                <div style="padding-top: 12px;margin-left: 45px"><span>каталог</span></div>
+            </div></a>
+            <a href="/Constructor" class="item_in_small_menu"><div class="small_menu_item3">
+                <div style="padding-top: 12px;margin-left: 45px"><span>конструктор</span></div>
+            </div></a>
+            <a href="/#for_as" class="item_in_small_menu"><div class="small_menu_item4">
+                <div style="padding-top: 12px;margin-left: 45px"><span>контакты</span></div>
+            </div></a>
+            <a><div class="small_menu_item5">
+                <div class="small_menu_icons">
+                    <div style="margin-right: 10px;height: 32px;width: 32px">
+                        <a href="/"><div class="btn_site1_in_menu"></div></a>
+                    </div>
+                    <div style="margin-left: 10px; margin-right: 10px">
+                        <a href="https://www.instagram.com/pamiatniki_glubokoye/"><div class="btn_site2_in_menu"></div></a>
+                    </div>
+                </div>
+            </div></a>
+        </div>
+    </div>
+
+</head>
+<body>
+    <div style="margin-left: 10%;margin-right: 10%;margin-top: 70px;">
+        {{#seeM}}
+            <div class="block_select">
+                <h1 class="small_titel">Памятники</h1>
+                <div class="items">
+                    {{#ListMonuments}}
+                        <a class="item" href="/list?type={{id}}">
+                        <div class="item_img"><img id="item_art" src="/GetCatalogImage?id={{id}}"></div>
+                        {{#name}}<div class="item_text">{{name}}</div>{{/name}}
+                        </a>
+                    {{/ListMonuments}}
+                </div>
+            </div>
+        {{/seeM}}
+        {{#seeC}}
+            <div class="block_select">
+                <h1 class="small_titel">Кресты и ограды</h1>
+                <div class="items">
+                    {{#ListСross}}
+                        <a class="item" href="/list?type={{id}}">
+                        <div class="item_img"><img id="item_art" src="/GetCatalogImage?id={{id}}"></div>
+                        {{#name}}<div class="item_text">{{name}}</div>{{/name}}
+                        </a>
+                    {{/ListСross}}
+                </div>
+            </div>
+        {{/seeC}}
+        {{#seeO}}
+            <div class="block_select">
+                <h1 class="small_titel">Декор</h1>
+                <div class="items">
+                    {{#ListOther}}
+                        <a class="item" href="/list?type={{id}}">
+                        <div class="item_img"><img id="item_art" src="/GetCatalogImage?id={{id}}"></div>
+                        {{#name}}<div class="item_text">{{name}}</div>{{/name}}
+                        </a>
+                    {{/ListOther}}
+                </div>
+            </div>
+        {{/seeO}}
+    </div>
+</body>
+</html>
