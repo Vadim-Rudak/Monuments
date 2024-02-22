@@ -30,9 +30,9 @@ This is site with monuments.
   <img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/catalog/selectMonument.png"  title="selectMonument">
 </p>
 
-<img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/catalog/selectStyleFont.png"  title="selectStyleFont">
+<img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/constructor/selectStyleFont.png"  title="selectStyleFont">
 
 <p align="center">
   <h2 align="center">AdminPage</h2>
-  <img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/catalog/editPhotoWork.png"  title="selectMonument">
+  <img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/adminPage/editPhotoWork.png"  title="edit photo work">
 </p>
