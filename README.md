@@ -1,6 +1,6 @@
-# Project Monuments
-
-This is site with monuments.
+<p align="center">
+  <img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/logo_monument.png"  title="logo">
+</p>
 
 <p align="center">
   <h2 align="center">Top page</h2>
