@@ -1,8 +1,19 @@
+<br>
 <p align="center">
-  <img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/logo_monument.png"  title="logo">
+  <img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/logo_monument.png"  title="logo" width="40%">
 </p>
+<br>
+<br>
+
+## ABOUT
+
+Website with a catalog of monuments. Their designer and other information.
 
 <p align="center">
+<br>
+  
+  ## DOCUMENTATION
+  <br>
   <h2 align="center">Top page</h2>
   <img src="https://github.com/Vadim-Rudak/ImagesInReadMe/blob/main/Monuments/topPage/logo.png"  title="logo">
 </p>
