@@ -10,7 +10,6 @@
 Website with a catalog of monuments. Their designer and other information.
 
 <p align="center">
-<br>
   
   ## DOCUMENTATION
   <br>
