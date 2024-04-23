@@ -10,12 +10,19 @@ import com.example.Monuments.repos.PhotoWorkRepo;
 import com.example.Monuments.repos.SettingsRepo;
 import com.example.Monuments.service.DashboardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @Controller
@@ -57,6 +64,17 @@ public class TopMenu {
         dashboardService.seeUserForDashboard(ipAddress,1);
 
         return "top_page";
+    }
+
+    @RequestMapping(value= "/.well-known/pki-validation/654609BC97742A0A76B16084CE2829C9.txt", method= RequestMethod.GET)
+    public ResponseEntity<?> verif() throws FileNotFoundException {
+
+        File file = new File("/home/web/verif/654609BC97742A0A76B16084CE2829C9.txt");
+        InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
+
+        return ResponseEntity.ok()
+                .contentType(MediaType.TEXT_EVENT_STREAM)
+                .body(resource);
     }
 
 }
